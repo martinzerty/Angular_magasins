@@ -1,0 +1,19 @@
+<div>
+    <h1 class="page-title">Welcome Home !</h1>
+</div>
+
+<div class="rate-form">
+    <label for="">Ajouter une appréciation : </label>
+    <br>
+    <textarea type="text" cols="50" rows="10" ngModel #name (change)="addWord(name)" name="name" id=""></textarea>
+    <br>
+    <button class="sub-rate" type="submit" >Envoyer</button>
+</div>
+
+<div>
+    <ul>
+        <p *ngFor="let word of words">
+            - {{ word }}
+        </p>
+    </ul>
+</div>

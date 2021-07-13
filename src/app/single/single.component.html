@@ -1,0 +1,40 @@
+<div class="single-infos" *ngIf="single_mag">
+    <h1 class="page-title">Info sur {{ single_mag.name }}</h1>
+    <p>Id : {{ single_mag.id }}</p>
+    <p>Addresse : {{ single_mag.adress }} à {{ single_mag.ville }} - {{ single_mag.zipcode }}</p>
+    <p>Note d'appréciation : {{ single_mag.rate }}</p>
+    <table>
+        <th>
+            <tr>
+                <td>
+                    Jours
+                </td>
+                <td>
+                    Ouverture
+                </td>
+                <td>
+                    Fermeture
+                </td>
+            </tr>
+        </th>
+        <tbody>
+            <tr *ngFor="let D of single_ouverts">
+                <td>
+                    {{ D }}
+                </td>
+                <td>
+                    {{ single_mag.ouvert_days['lundi'][0] }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li *ngFor="let item of single_mag.stock">
+            <p><span>
+                {{ item.quantity }}
+                {{ item.name }}
+                </span>
+            </p>
+        </li>
+    </ul>
+</div>

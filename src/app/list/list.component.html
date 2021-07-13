@@ -1,0 +1,23 @@
+<div>
+    <h2 class="page-title">Seen all shops here</h2>
+</div>
+<div>
+    <div class=list-mag>
+        <div class="list-mag-elem" *ngFor="let mag of liste_mag">
+            <div class="card">
+                <h4 class="card-title">
+                    {{ mag.name }}
+                </h4>
+                <div class="card-body">
+                    <p class="adrr">
+                        {{ mag.adress }} - {{ mag.ville }}
+                    </p>
+                    <span>{{ mag.rate }}/5 <img (click)="addRate( mag.id)" class="rate-img" src="/assets/rate.png"></span>
+                </div>
+                <div class="card-foot">
+                    <a routerLink="/single/{{ mag.id }}" >Voir Plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
