@@ -28,9 +28,6 @@ export interface itemStock {
     quantity : number;
 };
 
-
-
-
 export const Liste_Mag: Typage_mag[] = [
     {id:0, name:"Panama Market", adress:"8 Rue Jean Valjean", 
     ville: "Panam-city", zipcode:75018, rate:4.8,

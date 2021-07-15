@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CartList, CartItem } from './data-service.service';
+import { CartItem } from './data-service.service';
 import * as Cart from '../assets/cart.json'
 
 
@@ -10,7 +10,5 @@ import * as Cart from '../assets/cart.json'
 })
 export class AppComponent {
   title = 'buisnessManager';
-  cartLen = CartList.length
-  cart = CartList
 
 }

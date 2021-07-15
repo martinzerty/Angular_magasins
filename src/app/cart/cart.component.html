@@ -1,7 +1,7 @@
 <h1 class="page-title">Walcomer</h1>
 
 <div class="container">
-    <div *ngFor="let item of cart">
-        {{ item }}
+    <div *ngFor=" let x of cartList ">
+        {{ x["quantity"] }} {{ x["name"] }} chez {{ x['shopId'] }}
     </div>
 </div>
