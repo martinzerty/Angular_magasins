@@ -5,9 +5,7 @@
             <ul class="nav-list">
                 <li class="nav-list-elem"><a class="header-link" href="/">Home</a></li>
                 <li class="nav-list-elem"><a class="header-link" href="/list">Shops</a></li>
-                <li *ngIf="!session">
-                    <a class="header-link" href="/login">Se Connecter</a>
-                </li>
+                <li class="nav-list-elem"><a class="header-link" href="/cart">Panier ({{cartLen}})</a></li>
             </ul>
         </nav>
     </div>

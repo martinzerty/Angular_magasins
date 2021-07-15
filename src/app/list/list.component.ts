@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Typage_mag, itemStock } from '../liste_shop';
-import { DataServiceService, User_sess } from '../data-service.service';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-list',
@@ -15,7 +15,6 @@ export class ListComponent implements OnInit {
     this.MagInfos()
   }
 
-  sess = User_sess
   liste_mag : Typage_mag[] = []
 
   MagInfos() : void{

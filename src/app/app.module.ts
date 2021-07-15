@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { SingleComponent } from './single/single.component';
-import { LoginComponent } from './login/login.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -14,8 +14,8 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     ListComponent,
     SingleComponent,
-    LoginComponent
-  ],
+    CartComponent
+],
   imports: [
     BrowserModule,
     AppRoutingModule

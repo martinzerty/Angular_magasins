@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataServiceService } from '../data-service.service';
 import { Typage_mag, itemStock } from '../liste_shop';
+import { CartList, CartItem } from '../data-service.service';
 
 @Component({
   selector: 'app-single',
@@ -19,7 +20,10 @@ export class SingleComponent implements OnInit {
 
   ngOnInit(): void {
     this.get_mag()
+    this.getCart()
   }
+
+  cart: CartItem[] = [];
 
   all_mag: Typage_mag[] = []
   single_mag: Typage_mag = {
@@ -103,6 +107,66 @@ export class SingleComponent implements OnInit {
       },
   ]
   }
+
+  getCart() : void{
+    for ( let x = 0; x < CartList.length; x++){
+      if ( CartList[x].shopId == this.single_mag.id ){
+        this.cart.push(CartList[x])
+      }
+    }
+    return 
+  }
+
+
+  temp_item : CartItem = {
+    id : 999,
+    name : "DEFAULT",
+    shopId : 999,
+    quantity : 999
+  };
+
+  addToCart(id: any, name : string){
+    console.log("FUNCTION ENTERED")
+    for (let x = 0; x < CartList.length; x++){
+      console.log("LOOP, COEF ", x)
+
+      if (CartList[x].id == id && CartList[x].shopId == this.single_mag.id){
+        console.log("ITEM IN CART")
+        CartList[x].quantity += 1;
+        console.log(CartList)
+       
+        for(let y = 0; y < this.single_mag.stock.length; y++){
+          if ( this.single_mag.stock[y].id == id ){
+            this.single_mag.stock[y].quantity -= 1
+            console.log("ITEM DELETED FROM STOCK")
+          }
+        }
+
+        return
+      }
+    
+    }
+
+    console.log("ADDING ITEM TO CART")
+    this.temp_item  = {
+      id : id,
+      name : name,
+      shopId : this.single_mag.id,
+      quantity : 1
+    }
+    console.log("cocuou")
+    CartList.push(this.temp_item)
+    console.log(CartList)
+
+    for(let y = 0; y < this.single_mag.stock.length; y++){
+      if ( this.single_mag.stock[y].id == id ){
+        this.single_mag.stock[y].quantity -= 1
+      }
+    }
+    return 
+      
+    }
+  
 
   get_mag(): void{
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);

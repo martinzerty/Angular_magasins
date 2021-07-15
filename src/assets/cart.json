@@ -1,0 +1,14 @@
+[
+    {
+        "id":999,
+        "name" : "DEFAUT",
+        "shopId" : 999,
+        "quantity" : 999
+    },
+    {
+        "id":998,
+        "name" : "PASTA",
+        "shopId" : 998,
+        "quantity" : 998
+    }
+]

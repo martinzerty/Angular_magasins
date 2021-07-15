@@ -74,6 +74,9 @@
                     {{ item.quantity }}
                     {{ item.name }}
                     </span>
+                    <button (click)="addToCart(item.id, item.name) " >
+                        +
+                    </button>
                 </p>
             </li>
         </ul>

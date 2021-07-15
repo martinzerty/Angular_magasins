@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { DataServiceService, User_sess } from './data-service.service';
+import { CartList, CartItem } from './data-service.service';
+import * as Cart from '../assets/cart.json'
+
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,7 @@ import { DataServiceService, User_sess } from './data-service.service';
 })
 export class AppComponent {
   title = 'buisnessManager';
-  session = User_sess;
+  cartLen = CartList.length
+  cart = CartList
+
 }
