@@ -1,0 +1,67 @@
+table{
+    border: solid 2px rgb(28, 46, 61);
+    border-radius: 4px;
+    padding: 4px;
+    margin: 7px;
+}
+
+th{
+    font-weight: bolder;
+    padding: 7px;
+}
+
+table { 
+    border-collapse: collapse; 
+}
+
+td{
+    padding: 5px;
+    text-align: center;
+}
+
+tr.bobot-row td{
+    border-bottom: solid 1px rgb(212, 212, 212);
+}
+
+.top-info{
+    display: flex;
+    justify-content: space-around;
+    margin: 40px;
+}
+
+
+.btn-banner{
+    float: right;
+}
+
+.ret-btn{
+    background-color:rgb(245, 235, 235) ;
+    color: rgb(66, 66, 66);
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    border: solid 1px rgb(68, 37, 37);
+}
+
+.ret-btn:hover{
+    background-color:rgb(240, 230, 230) ;
+}
+
+.stock-list{
+    list-style: none;
+    padding: 0  ;
+    width: 100%;
+}
+
+
+.stock-item{
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(250, 245, 245);
+    border: solid 1px rgb(250, 249, 249);
+    border-collapse: collapse;
+}
+
+.stock-item:hover{
+    background-color: rgb(245, 235, 235);
+}

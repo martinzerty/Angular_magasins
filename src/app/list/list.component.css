@@ -32,6 +32,20 @@
     padding: 0 1em 1em 1em;
 }
 
+.card-foot{
+    padding: 0 1em 1em 1em;
+}
+
+input:disabled{
+    font-size: initial;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    border: none;
+    opacity: 100%;
+    background-color: none;
+
+}
+
 .rate-img{
     width: 30px;
     vertical-align: -3px;

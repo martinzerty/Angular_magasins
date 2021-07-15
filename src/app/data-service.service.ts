@@ -12,3 +12,5 @@ export class DataServiceService {
     return Liste_Mag  
   }
 }
+
+export const User_sess = true;

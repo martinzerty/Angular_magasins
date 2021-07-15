@@ -1,40 +1,81 @@
 <div class="single-infos" *ngIf="single_mag">
+    
     <h1 class="page-title">Info sur {{ single_mag.name }}</h1>
-    <p>Id : {{ single_mag.id }}</p>
-    <p>Addresse : {{ single_mag.adress }} à {{ single_mag.ville }} - {{ single_mag.zipcode }}</p>
-    <p>Note d'appréciation : {{ single_mag.rate }}</p>
-    <table>
-        <th>
-            <tr>
-                <td>
-                    Jours
-                </td>
-                <td>
-                    Ouverture
-                </td>
-                <td>
-                    Fermeture
-                </td>
-            </tr>
-        </th>
-        <tbody>
-            <tr *ngFor="let D of single_ouverts">
-                <td>
-                    {{ D }}
-                </td>
-                <td>
-                    {{ single_mag.ouvert_days['lundi'][0] }}
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <ul>
-        <li *ngFor="let item of single_mag.stock">
-            <p><span>
-                {{ item.quantity }}
-                {{ item.name }}
-                </span>
-            </p>
-        </li>
-    </ul>
+    <div class="container">
+        <div class="btn-banner">
+            <div class="">
+                <a href="/list">
+                Autres magasins</a>
+            </div>
+        </div>
+        <div class="top-info">
+            <div class="top-info-text">
+                <p><strong>{{ single_mag.adress }}</strong>, {{ single_mag.ville }} - {{ single_mag.zipcode }}</p>
+                <p>Note d'appréciation : {{ single_mag.rate }}</p>
+                <p>Id : {{ single_mag.id }}</p>
+            </div>
+            <div class="top-info-hour">
+                <table>
+                    <thead>
+                        <tr class="bobot-row">
+                            <th class="head-cell">
+                                Jours
+                            </th>
+                            <th class="head-cell">
+                                Disponibilité
+                            </th>
+                            <th class="head-cell">
+                                Ouverture
+                            </th>
+                            <th class="head-cell">
+                                Fermeture
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bobot-row" *ngFor="let Day of single_mag.week">
+                            <td>
+                                {{ Day["name"] }}
+                            </td>
+                            <td>
+                                <span style="color: green;" *ngIf="Day.ouvert; else closed">Ouvert</span>
+                                <ng-template #closed><span style="color:red">Fermé</span>
+                                </ng-template>
+                            </td>
+                            <td>
+                                <span *ngIf="Day.ouvert; else no_hor">
+                                    {{ Day.heures.open_hour }}:{{ Day.heures.open_min }}
+                                </span>
+                                <ng-template #no_hor>
+                                    <span>
+                                        -
+                                    </span>
+                                </ng-template>
+                            </td>
+                            <td>
+                                <span *ngIf="Day.ouvert; else no_hor">
+                                    {{ Day.heures.close_hour }}:{{ Day.heures.close_min }}
+                                </span>
+                                <ng-template #no_hor>
+                                    <span>
+                                        -
+                                    </span>
+                                </ng-template>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h3 class="page-title subtitle    ">Stock actuel :</h3>
+        <ul class="stock-list">
+            <li class="stock-item" *ngFor="let item of single_mag.stock">
+                <p><span>
+                    {{ item.quantity }}
+                    {{ item.name }}
+                    </span>
+                </p>
+            </li>
+        </ul>
+    </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataServiceService, User_sess } from './data-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'buisnessManager';
-
+  session = User_sess;
 }

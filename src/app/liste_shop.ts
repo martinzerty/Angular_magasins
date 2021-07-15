@@ -6,26 +6,30 @@ export interface Typage_mag {
     zipcode : number;
     rate: number;
     stock : itemStock[];
-    ouvert_days : ouvertJours;
+    week : Day[];
 }
 
-export interface ouvertJours {
-    lundi : [ boolean, number, number ],
-    mardi : [ boolean, number, number ],
-    mercredi : [ boolean, number, number ],
-    jeudi : [ boolean, number, number ],
-    vendredi : [ boolean, number, number ],
-    samedi : [ boolean, number, number ],
-    dimanche : [ boolean, number, number ],
+export interface Day{
+    name : string;
+    ouvert : boolean;
+    heures: Hour;
 };
 
-// export interface
+export interface Hour{
+    open_hour : number;
+    open_min : number;
+    close_hour : number;
+    close_min : number;
+}
 
 export interface itemStock {
     id : number;
     name : string;
     quantity : number;
 };
+
+
+
 
 export const Liste_Mag: Typage_mag[] = [
     {id:0, name:"Panama Market", adress:"8 Rue Jean Valjean", 
@@ -46,16 +50,78 @@ export const Liste_Mag: Typage_mag[] = [
         name: "Pomme",
         quantity: 34
       }
-    ], ouvert_days :
+    ], week : [
         {
-            lundi : [true, 8, 8],
-            mardi : [true, 8, 8],
-            mercredi : [true, 9, 8],
-            jeudi : [true, 8, 8],
-            vendredi : [true, 8, 7],
-            samedi : [true, 9, 6],
-            dimanche :  [false, 0, 0]
-        }
+            name : "Lundi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 30
+            }
+        },
+        {
+            name : "Mardi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 30
+            }
+        },
+        {
+            name : "Mercredi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 0
+            }
+        },
+        {
+            name : "Jeudi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 30
+            }
+        },
+        {
+            name : "Vendredi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 18,
+                close_min : 30
+            }
+        },
+        {
+            name : "Samedi",
+            ouvert : true,
+            heures : {
+                open_hour : 9,
+                open_min : 0,
+                close_hour : 17,
+                close_min : 30
+            }
+        },
+        {
+            name : "Dimanche",
+            ouvert : false,
+            heures : {
+                open_hour : 0,
+                open_min : 0,
+                close_hour : 0,
+                close_min : 0
+            }
+        },
+    ]
   },
   {id:1, name:"Street Resto", adress:"521 Avenue Mozar", 
     ville: "Clermont-Ferrand", zipcode:63100, rate:3.9,
@@ -75,16 +141,78 @@ export const Liste_Mag: Typage_mag[] = [
         name: "Orange",
         quantity: 28
       }
-    ], ouvert_days :
+    ], week : [
         {
-            lundi : [true, 8, 8],
-            mardi : [true, 8, 8],
-            mercredi : [true, 9, 8],
-            jeudi : [true, 8, 8],
-            vendredi : [true, 8, 7],
-            samedi : [true, 9, 6],
-            dimanche :  [false, 0, 0]
-        }
+            name : "Lundi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 0
+            }
+        },
+        {
+            name : "Mardi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 0
+            }
+        },
+        {
+            name : "Mercredi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 0
+            }
+        },
+        {
+            name : "Jeudi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 30
+            }
+        },
+        {
+            name : "Vendredi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 18,
+                close_min : 0
+            }
+        },
+        {
+            name : "Samedi",
+            ouvert : true,
+            heures : {
+                open_hour : 9,
+                open_min : 30,
+                close_hour : 17,
+                close_min : 30
+            }
+        },
+        {
+            name : "Dimanche",
+            ouvert : false,
+            heures : {
+                open_hour : 0,
+                open_min : 0,
+                close_hour : 0,
+                close_min : 0
+            }
+        },
+    ]
   },
   {id:2, name:"Matelo Ravitalle", adress:"1 Rue du Port", 
     ville: "Lorient", zipcode:54000, rate:3.2,
@@ -104,15 +232,77 @@ export const Liste_Mag: Typage_mag[] = [
         name: "Fraise",
         quantity: 132
       }
-    ] , ouvert_days :
+    ] ,week : [
         {
-            lundi : [true, 8, 8],
-            mardi : [true, 8, 8],
-            mercredi : [true, 9, 8],
-            jeudi : [true, 8, 8],
-            vendredi : [true, 8, 7],
-            samedi : [true, 9, 6],
-            dimanche :  [false, 0, 0]
-        }
+            name : "Lundi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 30
+            }
+        },
+        {
+            name : "Mardi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 30
+            }
+        },
+        {
+            name : "Mercredi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 0
+            }
+        },
+        {
+            name : "Jeudi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 20,
+                close_min : 30
+            }
+        },
+        {
+            name : "Vendredi",
+            ouvert : true,
+            heures : {
+                open_hour : 8,
+                open_min : 0,
+                close_hour : 18,
+                close_min : 30
+            }
+        },
+        {
+            name : "Samedi",
+            ouvert : true,
+            heures : {
+                open_hour : 9,
+                open_min : 0,
+                close_hour : 17,
+                close_min : 0
+            }
+        },
+        {
+            name : "Dimanche",
+            ouvert : true,
+            heures : {
+                open_hour : 10,
+                open_min : 0,
+                close_hour : 16,
+                close_min : 0
+            }
+        },
+    ]
   },
   ];

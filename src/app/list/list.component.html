@@ -10,7 +10,7 @@
                 </h4>
                 <div class="card-body">
                     <p class="adrr">
-                        {{ mag.adress }} - {{ mag.ville }}
+                        <span>{{ mag.adress }}</span> - <span>{{ mag.ville }}</span>
                     </p>
                     <span>{{ mag.rate }}/5 <img (click)="addRate( mag.id)" class="rate-img" src="/assets/rate.png"></span>
                 </div>

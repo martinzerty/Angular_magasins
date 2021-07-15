@@ -30,19 +30,79 @@ export class SingleComponent implements OnInit {
     zipcode : 9999,
     rate: 9999,
     stock: [],
-    ouvert_days :
-        {
-            lundi : [true, 8, 8],
-            mardi : [true, 8, 8],
-            mercredi : [true, 9, 8],
-            jeudi : [true, 8, 8],
-            vendredi : [true, 8, 7],
-            samedi : [true, 9, 6],
-            dimanche :  [false, 0, 0]
-        }
+    week : [
+      {
+          name : "Lundi",
+          ouvert : true,
+          heures : {
+              open_hour : 0,
+              open_min : 0,
+              close_hour : 0,
+              close_min : 0
+          }
+      },
+      {
+          name : "Mardi",
+          ouvert : true,
+          heures : {
+              open_hour : 0,
+              open_min : 0,
+              close_hour : 0,
+              close_min : 0
+          }
+      },
+      {
+          name : "Mercredi",
+          ouvert : true,
+          heures : {
+              open_hour : 0,
+              open_min : 0,
+              close_hour : 0,
+              close_min : 0
+          }
+      },
+      {
+          name : "Jeudi",
+          ouvert : true,
+          heures : {
+              open_hour : 0,
+              open_min : 0,
+              close_hour : 0,
+              close_min : 0
+          }
+      },
+      {
+          name : "Vendredi",
+          ouvert : true,
+          heures : {
+              open_hour : 0,
+              open_min : 0,
+              close_hour : 0,
+              close_min : 0
+          }
+      },
+      {
+          name : "Samedi",
+          ouvert : true,
+          heures : {
+              open_hour : 0,
+              open_min : 0,
+              close_hour : 0,
+              close_min : 0
+          }
+      },
+      {
+          name : "Dimanche",
+          ouvert : false,
+          heures : {
+              open_hour : 0,
+              open_min : 0,
+              close_hour : 0,
+              close_min : 0
+          }
+      },
+  ]
   }
-
-  single_ouverts : string[] = []
 
   get_mag(): void{
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
@@ -56,11 +116,6 @@ export class SingleComponent implements OnInit {
           if (stock[y]["quantity"] > 1){
             stock[y]["name"] += "s"
           }
-        }
-
-        for (let x in this.single_mag.ouvert_days){
-          this.single_ouverts.push(x)
-          console.log(typeof(x))
         }
         return
       }

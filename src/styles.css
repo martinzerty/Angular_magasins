@@ -8,6 +8,15 @@
     src: url("https://use.typekit.net/af/b0c5f5/00000000000000003b9b3f85/27/l?unicode=AAAQcAAAAAe511lqjHcr-uAHACFxO_j72ZXLKdqlMZ-Ygi1urWFkaIErHGQCRqNHmaB8qp4ojNXS1YklUHH4sn-0Bx39ogfPEk68n81u8isIZJcm8DzgmocEPiJ4TfngVmlElyThc7VvTJ8CJG15mZXk2HInG--3a6s8tGB90h18d4VL3Gy32Y9o-iSC2PV_nISUJuLvDmg8qXbxl_DDp6P08SZrvXd6ouLelXA1YL1F1j7YqTNOC9fS1GeJWKMvWLfdML9-Qt_W7B87k-2LQmfyaMBz4q_58wK0nQcpR15KHs-XO0iYRoqeGPerHSzL7GUNsh64bHxJoD0mminJ1qXcTMmWf8Dy1faCsWvdTbIywrn02e0I40mePDXW9qwAtjWrTi7PhmM-YctFKLj07djH4yR7P4HIPK1M0bQJyMRdoL9j603bOITfNC97JdFrITBPTy7pmLpW9qUpe67HYtcaacDURiCMv9z47QksuQfArE_0Qq0EZDzzf1dZJIF_iSEhn1D_DEaXGbWO9aKP_hTh2q2ZJs6WRIAgbj4vykm5ILdV57owxYXEkG1ldjL7bfruuCys5uHVN7Uci2hy8dvp8PeufTAAszWuIVr8FvQIMY4M7y2bInnew9fKGydMtWqXjqnBtpLccGhif7Kxa6DBqult9sSZTMmqa5VX4jy9iUS8TdMqpazCBOVNviRNnWYoRQAAc18&features=ALL&v=3");
 }
 
+a{
+    text-decoration: none;
+    color: rgb(23, 74, 133);
+}
+
+a:hover{
+    color:rgb(19, 60, 107);
+}
+
 body{
     font-family: main-font;
     margin: 0 !important;
@@ -16,6 +25,13 @@ body{
 
 :root{
     --header-bg: rgb(150, 26, 26);
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 80%;
+    border:  solid 1px rgb(212, 212, 212);
+    padding: 15px;
 }
 
 .page-title{
