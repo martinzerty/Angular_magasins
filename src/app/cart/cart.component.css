@@ -23,12 +23,14 @@
 
 .checkout-btn{
     font-size: 90%;
-    background-color: rgb(89, 91, 202);
-    color: white;
+    background-color: #ffd500;
+    font-family: bold-font;
+    transition: all .2s;
 }
 .checkout-btn:hover{
-    background-color:rgb(113, 163, 255) ;
-    color: rgb(0, 0, 0);
+    box-shadow: 1px 1px 0px black;
+    background-color: #ffd500;
+    transition: all .2s;
 }
 
 button{

@@ -1,6 +1,6 @@
 @font-face {
     font-family: bold-font;
-    src: url("https://use.typekit.net/af/505d17/00000000000000003b9aee44/27/l?unicode=AAAJ9gAAAAfgD4iL7Bze3v4KKZnXZIL2C8eZf8874BAq17yFp-jDdhxVG4jLROyqMtEGYifrm87326cHdXiZu1j2acOJUxvNeUvbiKncqc-S-OHjsZ1zsOsDzOX8AvsnBe9ZEV8jOKzLSCpmY6H-HjJ7_G9bK25GP7zyFxbcbjrf7ryt354oo-Vf5aCbwFHV0Y9XOuiJKC5wiNsNfL1V-Tfj-A4GpbIi9V-peUPM_nVLufD-y86CHrzkbDeUWSazjZGoEGU_cw8HEs8oW_PSzfS1pBjWMRqv17krkgEDa4e-zOnRslIGRSnn_-uixyNEwRI5aVGBxDPHSq_M6SIR8nG3laowoaxR4_n8PMg1_ia11HtdLk6WL9N6v9J_fmNKfqONrKEa_fylCLDHNqiLxmJLFl3j-FuW6ZyPhHjapsmTq5xWADQW5w&features=ALL&v=3");
+    src: url("https://use.typekit.net/af/97fbd1/00000000000000003b9b3f88/27/l?unicode=AAAQcAAAAAe511lqjHcr-uAHACFxO_j72ZXLKdqlMZ-Ygi1urWFkaIErHGQCRqNHmaB8qp4ojNXS1YklUHH4sn-0Bx39ogfPEk68n81u8isIZJcm8DzgmocEPiJ4TfngVmlElyThc7VvTJ8CJG15mZXk2HInG--3a6s8tGB90h18d4VL3Gy32Y9o-iSC2PV_nISUJuLvDmg8qXbxl_DDp6P08SZrvXd6ouLelXA1YL1F1j7YqTNOC9fS1GeJWKMvWLfdML9-Qt_W7B87k-2LQmfyaMBz4q_58wK0nQcpR15KHs-XO0iYRoqeGPerHSzL7GUNsh64bHxJoD0mminJ1qXcTMmWf8Dy1faCsWvdTbIywrn02e0I40mePDXW9qwAtjWrTi7PhmM-YctFKLj07djH4yR7P4HIPK1M0bQJyMRdoL9j603bOITfNC97JdFrITBPTy7pmLpW9qUpe67HYtcaacDURiCMv9z47QksuQfArE_0Qq0EZDzzf1dZJIF_iSEhn1D_DEaXGbWO9aKP_hTh2q2ZJs6WRIAgbj4vykm5ILdV57owxYXEkG1ldjL7bfruuCys5uHVN7Uci2hy8dvp8PeufTAAszWuIVr8FvQIMY4M7y2bInnew9fKGydMtWqXjqnBtpLccGhif7Kxa6DBqult9sSZTMmqa5VX4jy9iUS8TdMqpazCBOVNviRNnWYoRQAAc18&features=ALL&v=3");
 }
 
 @font-face {
@@ -37,6 +37,8 @@ body{
 .page-title{
     text-align: center;
     margin-top: 30px;
+    font-weight: bolder;
+    font-family: bold-font;
 }
 
 
@@ -49,22 +51,24 @@ div.header{
 div.header-mid{
     width: 80%;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
 }
 
 ul.nav-list{
     display: flex;
     list-style: none;
-    color: rgb(212, 212, 212);
-}
-
-ul.nav-list:hover{
-    color: white;
 }
 
 a.header-link{
     color: inherit;
     text-decoration: none;
     padding: 1em;
+    color: rgb(212, 212, 212);
+}
+
+a.header-link:hover{
+    color: white;
 }
 
 textarea{
@@ -73,6 +77,12 @@ textarea{
     padding: 4px;
     border: solid 5px#3d45583d;
     border-radius: 5px;
+    transition: all .5s;
+}
+textarea:focus{
+    outline: none;
+    border-color: rgba(8, 75, 75, 0.712);
+    transition: all .5s;
 }
 
 

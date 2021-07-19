@@ -22,6 +22,7 @@
     "@spectrum-css/page": "^3.0.2",
     "@spectrum-css/vars": "^3.0.2",
     "ajv": "^6.9.1",
+    "angular": "^1.8.2",
     "file-saver": "^2.0.5",
     "ngx-indexed-db": "^9.1.2",
     "rxjs": "~6.6.0",

@@ -1,20 +1,24 @@
 <div>
-    <h1 class="page-title">Accueil</h1>
+    <h1 class="page-title home-title">Accueil</h1>
 </div>
 
-<div class="rate-form">
-    <h3>Ajoutez un petit commentaire :) </h3>
-    <label for="comm_space">Juste ici :</label>
-    <br>
-    <textarea type="text" cols="50" rows="10" ngModel #name (change)="addWord(name)" name="name" id="comm_space"></textarea>
-    <br>
-    <button class="sub-rate" type="submit" >Envoyer</button>
-</div>
+<div class="home-rates">
 
-<div>
-    <ul>
-        <p *ngFor="let word of words">
-            - {{ word }}
-        </p>
-    </ul>
+    <div class="rate-form">
+        <h3>Ajoutez un petit commentaire :) </h3>
+        <label for="comm_space">Juste ici :</label>
+        <br>
+        <textarea type="text" cols="50" rows="10" ngModel #name (change)="addWord(name)" name="name" id="comm_space"></textarea>
+        <br>
+        <button class="sub-rate" type="submit" >Envoyer</button>
+    </div>
+
+    <div class="rates-list">
+        <h3>Les commentaires :</h3>
+        <ul>
+            <p *ngFor="let word of words">
+                - {{ word }}
+            </p>
+        </ul>
+    </div>
 </div>

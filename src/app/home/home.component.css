@@ -10,8 +10,22 @@
     padding: 1em;
 }
 
+.home-title{
+    margin-bottom: 2em;
+}
+
+.home-rates{
+    display: flex;
+    flex: 1 50%;
+    justify-content: center;
+    align-self: center;
+    width: 70%;
+    margin: 0 auto;
+    padding: 1em;
+}
+
 .sub-rate{
-    background-color: rgb(116,57,145);
+    background-color: rgb(57, 70, 145);
     color: #f6f7fa;
     font-size: 100%;
     padding: 0.5em 1em;
