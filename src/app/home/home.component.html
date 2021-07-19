@@ -1,11 +1,12 @@
 <div>
-    <h1 class="page-title">Welcome Home !</h1>
+    <h1 class="page-title">Accueil</h1>
 </div>
 
 <div class="rate-form">
-    <label for="">Ajouter une appréciation : </label>
+    <h3>Ajoutez un petit commentaire :) </h3>
+    <label for="comm_space">Juste ici :</label>
     <br>
-    <textarea type="text" cols="50" rows="10" ngModel #name (change)="addWord(name)" name="name" id=""></textarea>
+    <textarea type="text" cols="50" rows="10" ngModel #name (change)="addWord(name)" name="name" id="comm_space"></textarea>
     <br>
     <button class="sub-rate" type="submit" >Envoyer</button>
 </div>

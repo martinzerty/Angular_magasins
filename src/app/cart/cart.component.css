@@ -1,0 +1,49 @@
+.stock-list{
+    list-style: none;
+    padding: 0  ;
+    width: 100%;
+}
+
+
+.stock-item{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(224, 240, 242);
+    border: solid 1px rgb(250, 249, 249);
+    border-collapse: collapse;
+    font-size: 110%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout{
+    text-align: center;
+    margin-top: 2em;
+}
+
+.checkout-btn{
+    font-size: 90%;
+    background-color: rgb(89, 91, 202);
+    color: white;
+}
+.checkout-btn:hover{
+    background-color:rgb(113, 163, 255) ;
+    color: rgb(0, 0, 0);
+}
+
+button{
+    border: solid 1px rgb(20, 46, 49);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 !important;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: white;
+}
+
+.stock-item:hover{
+    background-color: rgb(217, 232, 235);
+}

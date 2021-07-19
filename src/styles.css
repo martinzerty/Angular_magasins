@@ -24,7 +24,7 @@ body{
 }
 
 :root{
-    --header-bg: rgb(150, 26, 26);
+    --header-bg: rgb(75, 46, 129);
 }
 
 .container{
@@ -35,7 +35,6 @@ body{
 }
 
 .page-title{
-    font-family: bold-font;
     text-align: center;
     margin-top: 30px;
 }
@@ -55,6 +54,11 @@ div.header-mid{
 ul.nav-list{
     display: flex;
     list-style: none;
+    color: rgb(212, 212, 212);
+}
+
+ul.nav-list:hover{
+    color: white;
 }
 
 a.header-link{
@@ -65,7 +69,7 @@ a.header-link{
 
 textarea{
     font-size: 100%;
-    font-family: bold-main;
+    font-family: monospace;
     padding: 4px;
     border: solid 5px#3d45583d;
     border-radius: 5px;

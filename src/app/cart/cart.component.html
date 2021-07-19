@@ -1,7 +1,14 @@
-<h1 class="page-title">Walcomer</h1>
+<h1 class="page-title">Amphore</h1>
 
 <div class="container">
-    <div *ngFor=" let x of cartList ">
-        {{ x["quantity"] }} {{ x["name"] }} chez {{ x['shopId'] }}
+    <div  class="stock-list">
+        <div class="stock-item" *ngFor=" let x of cartList ">
+            <span><button (click)="more(x['id'],x['name'], x['shopId'], x['quantity'])">+</button></span>
+            <span>{{ x["quantity"] }} {{ x["name"] }} chez {{ fullInfos[x['shopId']] }}</span>
+            <span><button (click)="less(x['id'],x['name'], x['shopId'], x['quantity'])" >-</button></span>
+        </div>
+        <div class="checkout">
+            <button  (click)="checkout()" class="checkout-btn">Acheter ces articles</button>
+        </div>
     </div>
 </div>

@@ -2,11 +2,11 @@
     
     <h1 class="page-title">Info sur {{ single_mag.name }}</h1>
     <div class="container">
-        <div class="btn-banner">
-            <div class="">
+        <div class="top-banner">
+            <p class="btn-banner">
                 <a href="/list">
                 Autres magasins</a>
-            </div>
+            </p>
         </div>
         <div class="top-info">
             <div class="top-info-text">
@@ -73,6 +73,7 @@
                 <p><span>
                     {{ item.quantity }}
                     {{ item.name }}
+                     à {{ item.price }} € / pièce
                     </span>
                     <button (click)="addToCart(item.id, item.name) " >
                         +

@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { SingleComponent } from './single/single.component';
 import { CartComponent } from './cart/cart.component';
+import { dbConfig } from './db-config';
+import { NgxIndexedDBModule } from 'ngx-indexed-db';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { CartComponent } from './cart/cart.component';
 ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxIndexedDBModule.forRoot(dbConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

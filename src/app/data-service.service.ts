@@ -26,15 +26,12 @@ export class DataServiceService {
     return this.cart
   }
 
-  addToCart(cart : object) : void{
-/*
-    Mettre en paramètre un objet de type tableau et non pas 
-    une chaîne de charactères.
-*/
 
-    this.cartStorage.setItem('CART',JSON.stringify(cart))
-  }
+}
 
+export interface Avis{
+  avis : string;
+  index: number;
 }
 
 export interface CartItem{

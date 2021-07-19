@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { DataServiceService } from '../data-service.service';
 import { Typage_mag, itemStock } from '../liste_shop';
 import { CartItem } from '../data-service.service';
+import { NgxIndexedDBService } from 'ngx-indexed-db';
 
 @Component({
   selector: 'app-single',
@@ -11,9 +12,8 @@ import { CartItem } from '../data-service.service';
   styleUrls: ['./single.component.css']
 })
 export class SingleComponent implements OnInit {
-  cartList = this.dataService.getCart()
 
-  cart: CartItem[] = [];
+  cart : CartItem[] = []
 
   all_mag: Typage_mag[] = []
   single_mag: Typage_mag = {
@@ -100,70 +100,55 @@ export class SingleComponent implements OnInit {
   constructor(
     private route : ActivatedRoute,
     private location : Location,
-    private dataService : DataServiceService
+    private dataService : DataServiceService,
+    private dbservice : NgxIndexedDBService
   ) { }
 
   ngOnInit(): void {
     this.get_mag()
+    this.cartGrab()
+    console.log("WEEESH",this.cart, typeof(this.cart))
   }
 
-  
-
-  getCart() : void{
-
-    for ( let x = 0; x < this.cartList.length; x++){
-      if ( this.cartList[x].shopId == this.single_mag.id ){
-        this.cart.push( this.cartList[x])
-      }
-    }
-    return 
+  cartGrab() {
+    this.dbservice.getAll('cartDB').subscribe( (datas) => {
+      this.cart = JSON.parse(JSON.stringify(datas))
+    } )
   }
 
-
-  temp_item : CartItem = {
-    id : 999,
-    name : "DEFAULT",
-    shopId : 999,
-    quantity : 999
-  };
 
   addToCart(id: any, name : string){
-
-    for (let x = 0; x < this.cartList.length; x++){
-
-      if (this.cartList[x].id == id && this.cartList[x].shopId == this.single_mag.id){
-        this.cartList[x].quantity += 1;
-       
-        for(let y = 0; y < this.single_mag.stock.length; y++){
-          if ( this.single_mag.stock[y].id == id ){
-            this.single_mag.stock[y].quantity -= 1
-          }
-        }
-
-        return
-      }
-    
-    }
-
-    this.temp_item  = {
-      id : id,
-      name : name,
-      shopId : this.single_mag.id,
-      quantity : 1
-    }
-
-    this.cartList.push(this.temp_item)
-    console.log(this.cartList)
-
-
+    this.cartGrab()
+  
+    // On enlève d'abord l'élément du magasin
     for(let y = 0; y < this.single_mag.stock.length; y++){
       if ( this.single_mag.stock[y].id == id ){
-        this.single_mag.stock[y].quantity -= 1
+        if (this.single_mag.stock[y].quantity > 0 ){
+          this.single_mag.stock[y].quantity -= 1
+        }
       }
     }
-    
-    this.dataService.addToCart(this.cartList)
-      
+
+    let futQuantity = 1
+
+    for (let x = 0; x < this.cart.length; x++){
+      if (this.cart[x].id == id && this.cart[x].shopId == this.single_mag.id){
+        futQuantity += this.cart[x].quantity
+      }
+    }
+
+
+    this.dbservice.update('cartDB',{
+      id:id,
+      name : name,
+      shopId : this.single_mag.id,
+      quantity : futQuantity
+    }).subscribe( (datas) => {
+      console.log("ADDED ITEM : ",datas)
+    } )
+
+    return
+          
     }
   
 
@@ -183,10 +168,6 @@ export class SingleComponent implements OnInit {
         return
       }
     }
-  }
-
-  tup(item :any){
-    return typeof(item)
   }
 
 }
