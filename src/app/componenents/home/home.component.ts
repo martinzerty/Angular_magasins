@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
-import { Avis } from '../data-service.service';
+import { Avis } from '../../data-service.service';
 
 @Component({
   selector: 'app-home',

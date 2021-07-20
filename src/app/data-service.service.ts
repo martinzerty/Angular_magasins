@@ -17,15 +17,6 @@ export class DataServiceService {
     return Liste_Mag  
   }
 
-  getCart() : CartItem[] {
-    const tmp = this.cartStorage.getItem('CART')
-    if (tmp != null){
-      this.cart = JSON.parse(tmp)
-    }
-
-    return this.cart
-  }
-
 
 }
 

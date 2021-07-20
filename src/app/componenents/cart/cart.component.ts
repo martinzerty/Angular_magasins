@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {  DataServiceService } from '../data-service.service';
-import { Liste_Mag } from '../liste_shop';
-import { CartItem } from '../data-service.service';
+import {  DataServiceService } from '../../data-service.service';
+import { Liste_Mag } from '../../liste_shop';
+import { CartItem } from '../../data-service.service';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
 
 @Component({
@@ -11,8 +11,8 @@ import { NgxIndexedDBService } from 'ngx-indexed-db';
 })
 
 export class CartComponent implements OnInit {
-  cartList = this.dataService.getCart()
-  infoMagTemp: CartItem | undefined
+  cartList : any
+  infoMagTemp! : CartItem 
   id = 0
   fullInfos = Object()
   infosMags = Liste_Mag

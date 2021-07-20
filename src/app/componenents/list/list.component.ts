@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Typage_mag, itemStock } from '../liste_shop';
-import { DataServiceService } from '../data-service.service';
+import { DataServiceService } from '../../data-service.service';
+import { ShopService } from 'src/app/shop.service';
 
 @Component({
   selector: 'app-list',
@@ -9,19 +9,24 @@ import { DataServiceService } from '../data-service.service';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private MagService: DataServiceService) { }
+  constructor(private MagService: DataServiceService, private shopService : ShopService ) { }
 
   ngOnInit(): void {
-    this.MagInfos()
+    this.getShopList()
   }
 
-  liste_mag : Typage_mag[] = []
+  liste_mag :any
 
   MagInfos() : void{
     this.liste_mag = this.MagService.getMag();
 
   };
 
+  getShopList() {
+    this.shopService.getShopList().subscribe( (data) => {
+      this.liste_mag = data
+    }, (err) => console.error(err) )
+  }
 
   addRate(id: any) {
     for (let x = 0; x <= this.liste_mag.length ; x++){
