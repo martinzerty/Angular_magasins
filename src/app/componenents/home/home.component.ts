@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
 import { Avis } from '../../data-service.service';
+import { ShopService } from 'src/app/shop.service';
 
 @Component({
   selector: 'app-home',
@@ -9,25 +10,29 @@ import { Avis } from '../../data-service.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private dbService : NgxIndexedDBService) { }
+  constructor(private dbService : NgxIndexedDBService, private shopService : ShopService) { }
 
   ngOnInit(): void {
-    this.dbService.getAll('avis').subscribe( (datas) => {
+    this.shopService.getComments().subscribe( (datas) => {
       for (let x = 0; x < datas.length; x++){
-      let coef = datas.length - x
-      this.words.push(JSON.parse(JSON.stringify(datas))[x].avis)
-      }
+
+        this.words.push(datas[x].comment)
+        }
+
+    } )
+
+    this.dbService.getAll('avis').subscribe( (datas) => {
+      
     })
   }
   words : Array<string> = []
 
   addWord(word: any){
-    console.log(word)
-    this.words.push(word.value)
-    this.dbService.addItem('avis',
-    {
-      avis : word.value
-    })
+    console.log("Asking service to post comment : ", word.value)
+    this.shopService.postComment(word.value).subscribe( (data) => {
+      console.log(data)},
+      (err) => console.log(err)
+    )
   }
 
 }

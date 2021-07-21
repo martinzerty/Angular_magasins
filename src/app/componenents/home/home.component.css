@@ -25,11 +25,19 @@
 }
 
 .sub-rate{
-    background-color: rgb(57, 70, 145);
-    color: #f6f7fa;
+    background-color: #ffd500;
     font-size: 100%;
     padding: 0.5em 1em;
     margin: 5px;
     border-radius: 3px;
     border: solid 1px #262a33;
+    box-shadow: none;
+}
+
+.sub-rate:hover{
+    box-shadow: 1px 1px 0px;
+}
+
+.sub-rate:active{
+    box-shadow: -1px -1px 0px;
 }

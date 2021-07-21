@@ -9,6 +9,12 @@ export interface Typage_mag {
     week: Day[];
 }
 
+export interface IComment{
+    ip: string;
+    comment : string;
+    date : Date
+}
+
 export interface IDay {
     name: string;
     ouvert: boolean;

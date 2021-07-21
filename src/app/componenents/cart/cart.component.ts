@@ -33,7 +33,6 @@ export class CartComponent implements OnInit {
     for (let x = 0; x < this.infosMags.length; x++){
       this.fullInfos[x.toString()] = this.infosMags[x].name
     }
-    console.log(this.fullInfos)
   }
 
   more(id : number ,name : string, shopId: number, quantity : number){
@@ -58,7 +57,7 @@ export class CartComponent implements OnInit {
       } )
     }
     else{
-      this.dbservice.delete('cartDB', id).subscribe( (datas) => { console.log(datas) } )
+      this.dbservice.delete('cartDB', id).subscribe( (datas) => {  } )
     }
   }
 
