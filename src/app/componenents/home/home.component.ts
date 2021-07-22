@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
 
         this.words.push(datas[x].comment)
         }
-
     } )
 
     this.dbService.getAll('avis').subscribe( (datas) => {

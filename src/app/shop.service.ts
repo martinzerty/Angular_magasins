@@ -9,6 +9,7 @@ export class ShopService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
+
   constructor( private httpClient : HttpClient ) { }
 
   getShopList() {
@@ -24,7 +25,9 @@ export class ShopService {
 
   getComments() {
     console.log('Request all comments')
-    return this.httpClient.get<IComment[]>('http://localhost:5050/api/getcomments',this.httpOptions)
+    let result = this.httpClient.get<IComment[]>('http://localhost:5050/api/getcomments',this.httpOptions)
+    console.log(result)
+    return result
   }
 
   // getGetAuth() {

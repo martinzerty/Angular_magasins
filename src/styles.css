@@ -24,7 +24,7 @@ body{
 }
 
 :root{
-    --header-bg: rgb(75, 46, 129);
+    --header-bg: rgb(234, 226, 236);
 }
 
 .container{
@@ -44,7 +44,7 @@ body{
 
 div.header{
     background-color: var(--header-bg);
-    color:rgb(246, 251, 253) ;
+    color:#91A17A ;
     padding: 1em 0;
 }
 
@@ -64,11 +64,11 @@ a.header-link{
     color: inherit;
     text-decoration: none;
     padding: 1em;
-    color: rgb(212, 212, 212);
+    color: #246A73;
 }
 
 a.header-link:hover{
-    color: white;
+    color: rgb(221, 190, 168);
 }
 
 textarea{
